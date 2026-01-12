@@ -15,6 +15,11 @@ $npm install typeorm reflect-metadata pg
 $npm install dotenv  
 $npm install --save-dev ts-node  
 
+tsconfig.jsonの作成  
+$touch tsconfig.json  
+
+上記設定を済ませた後に「docker-compose up -d --build」を実行  
+
 ## 補足2  
 ローカルのNode.jsがlocalhost:5432に接続する場合、接続先はローカルのTCPポート5432  
 dockerコンテナ外からTCP接続したい場合はlisten_addressesを「0.0.0.0」または「＊」にする  
