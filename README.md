@@ -1,4 +1,31 @@
 # node-postgres-typeorm  
+環境構築です。  
+ダミーデータの一覧取得と単一取得まで出来ます。  
+cloneしてCRUD処理の練習に使用出来ます。  
+
+| 内容 | メソッド | URI |
+|------|--------|-----|
+| 全 Todo データを取得 | GET | /api/todos |
+| Todo の ID に紐づく単一の Todo データを取得 | GET | /api/todos/:id |
+
+## 環境構築
+
+### コマンドライン上
+$git clone https://github.com/Chayney/node-postgres.git  
+$cp .env.sample .env  
+$docker-compose up -d --build  
+※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。  
+$docker exec -it <nodeコンテナ> sh  
+※nodeコンテナ名はビルド後にターミナルで確認してください。  
+
+### Nodeコンテナ内 
+$npm run migration:run  
+$npm run seed:run  
+
+※src/database/migrationsにmigrationファイルが無い時、もしくは消した時  
+$npm run migration:generate  
+$npm run migration:run  
+$npm run seed:run  
 
 ## URL
 ・node-api: http://localhost:3000/api/todos  
