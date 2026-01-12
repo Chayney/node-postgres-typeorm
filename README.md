@@ -11,7 +11,7 @@ cloneしてCRUD処理の練習に使用出来ます。
 ## 環境構築
 
 ### コマンドライン上
-$git clone https://github.com/Chayney/node-postgres.git  
+$git clone https://github.com/Chayney/node-postgres-typeorm.git  
 $cp .env.sample .env  
 $docker-compose up -d --build  
 ※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。  
