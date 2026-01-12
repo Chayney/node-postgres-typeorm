@@ -17,7 +17,7 @@ $npm install --save-dev ts-node
 
 ## 補足2  
 ローカルのNode.jsがlocalhost:5432に接続する場合、接続先はローカルのTCPポート5432  
-dockerコンテナ外からTCP接続したい場合はlisten_addressesを「0.0.0.0」または「*」    
+dockerコンテナ外からTCP接続したい場合はlisten_addressesを「0.0.0.0」または「＊」にする  
 仮にmysqlを使用する場合はデフォルトバインドに「0.0.0.0」が設定されているためコンテナ外から接続可能  
 postgresqlのデフォルトバインドは「localhost」になっているためコンテナ外からの接続は受け付けていない  
 docker-compose.ymlでport公開しつつも「listen_addresses = '*'」のように外部からのアクセスを許可する設定が必要(postgres.confで記載)    
