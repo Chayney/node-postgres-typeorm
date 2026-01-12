@@ -21,7 +21,7 @@ $docker-compose up -d --build
 ※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。    
 
 ### migration及びseeding  
-$cd node
+$cd node  
 $npm run migration:run  
 $npm run seed:run  
 
