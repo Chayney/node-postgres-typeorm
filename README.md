@@ -15,7 +15,7 @@ $git clone https://github.com/Chayney/node-postgres-typeorm.git
 $cp .env.sample .env  
 $cd node  
 $cp .env.sample .env  
-$cd ../
+$cd ../  
 $docker-compose up -d --build  
 ※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。  
 $docker exec -it <nodeコンテナ> sh  
