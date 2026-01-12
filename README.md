@@ -17,11 +17,10 @@ $cd node
 $cp .env.sample .env  
 $cd ../  
 $docker-compose up -d --build  
-※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。  
-$docker exec -it <nodeコンテナ> sh  
-※nodeコンテナ名はビルド後にターミナルで確認してください。  
+※この時点でコンテナ起動しているがマイグレーションしていないため「Internal server error」になります。    
 
-### Nodeコンテナ内 
+### migration及びseeding  
+$cd node
 $npm run migration:run  
 $npm run seed:run  
 
