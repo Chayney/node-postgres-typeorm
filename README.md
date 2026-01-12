@@ -14,6 +14,7 @@ cloneしてCRUD処理の練習に使用出来ます。
 $git clone https://github.com/Chayney/node-postgres-typeorm.git  
 $cp .env.sample .env  
 $cd node  
+$npm install  
 $cp .env.sample .env  
 $cd ../  
 $docker-compose up -d --build  
