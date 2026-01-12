@@ -1,5 +1,35 @@
 # node-postgres-typeorm  
 
+## URL
+・node-api: http://localhost:3000/api/todos  
+
+### 説明  
+           ┌────────────────────┐
+           │ AppDataSource       │
+           │ - CRUD用           │
+           │ - Singleton        │
+           │ - synchronize: false│
+           └────────────────────┘
+                     │
+           ┌─────────┴─────────┐
+           │                     │
+           ▼                     ▼
+        アプリ起動             DB操作
+  (Node.js / Express)          (CRUD)
+
+           ┌────────────────────┐
+           │ MigrationDataSource │
+           │ - マイグレーション │
+           │ - CLI専用          │
+           │ - migrations指定   │
+           └────────────────────┘
+                     │
+           ┌─────────┴─────────┐
+           │                     │
+           ▼                     ▼
+   migration:generate        migration:run
+
+
 ## 補足1  
 この構成を1から作成する場合の構築方法  
 ※ビルド後にホスト側とコンテナ側でvolume同期を行うが予めホスト側でnode_modulesが存在していなければその状態をコンテナ側と同期してしまう  
