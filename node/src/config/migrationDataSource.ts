@@ -10,8 +10,6 @@ import { DataSource } from 'typeorm';
 // ホスト用で実行する時はdocker-compose.ymlでのpostgresコンテナをポート公開している必要あり
 dotenv.config();
 
-console.log('Connecting to DB host:', process.env.DB_MIGRATION_HOST);
-
 export const MigrationDataSource = new DataSource({
     type: "postgres",
     host: process.env.DB_MIGRATION_HOST,

@@ -19,8 +19,6 @@ export const findAllTodo = async (options?: FindManyOptions<Todo>) => {
     }
 };
 
-// 名前はidだけを取得していることをわかりやすくした方が良い
-// 例: findIdなど
 export const findTodo = async (id: number) => {
     const db = AppDataSource.getInstance();
     const todoRepository = db.getRepository(Todo);
@@ -34,42 +32,5 @@ export const findTodo = async (id: number) => {
     } catch (error) {
         console.error(error);
         throw new Error(`Failed to find todo: ${error}`);
-    }
-};
-
-// 完成したTodoがあれば良いからこの引数
-export const createTodo = async (todo: Todo) => {
-    const db = AppDataSource.getInstance();
-    const todoRepository = db.getRepository(Todo);
-
-    try {
-        return await todoRepository.save(todo);
-    } catch (error) {
-        console.error(error);
-        throw new Error(`Failed to create todo: ${error}`)
-    }
-};
-
-export const updateTodo = async (todo: Todo) => {
-    const db = AppDataSource.getInstance();
-    const todoRepository = db.getRepository(Todo);
-
-    try {
-        return await todoRepository.save(todo);
-    } catch (error) {
-        console.error(error);
-        throw new Error(`Failed to update todo: ${error}`);
-    }
-};
-
-export const deleteTodo = async (id: number) => {
-    const db = AppDataSource.getInstance();
-    const todoRepository = db.getRepository(Todo);
-
-    try {
-        return await todoRepository.delete(id);
-    } catch (error) {
-        console.error(error);
-        throw new Error(`Failed to delete todo: ${error}`);
     }
 };
